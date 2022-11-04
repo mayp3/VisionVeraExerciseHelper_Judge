@@ -24,7 +24,6 @@ class LifeCycleController:
         pass
 
 
-
 def main():
     Myconfig = conf.initConfig("./conf/conf.toml")
     log.LoggingFactory = log.InitLoggingFacotory(Myconfig["log"])
@@ -32,10 +31,6 @@ def main():
     myOperator = operator.Operator(Myconfig)
     myOperator.runOperation_panduan(-1)
     #sysUtils.clearScreenShots()
-
-
-    
-
 
 
 def testFunc():
@@ -48,6 +43,7 @@ def testFunc():
 
     # window = windowManipulator.WindowManipulator(Myconfig["initWindowConfig"],Myconfig["img"]["screenShotsPath"])
     # window.nomolizeWindowSize()
+
 
 if __name__ == "__main__":
     main()

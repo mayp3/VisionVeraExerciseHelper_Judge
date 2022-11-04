@@ -1,14 +1,14 @@
-from clients import conf,log
+from clients import log
 from server import mouseController,windowManipulator,photoRecognizer,photoSearcher
+from utils import setDpi
 import time
-from functools import wraps
 import datetime
 import os
 
 
 
 class Operator:
-    def __init__(self,myConfig):
+    def __init__(self, myConfig):
         self.conf = myConfig
         self.logger = log.LoggingFactory.logger(__name__)
         self.buttons = myConfig["buttons"]
@@ -21,6 +21,9 @@ class Operator:
         self.newestPhotoPath = ""
         self.weekTaskElimination = 1<<10
         self.takeDrug = int(myConfig["initWindowConfig"]["takeDrag"])
+        self.defaultDpi = setDpi.getDpi()
+
+        setDpi.setDefaultDpi()
 
         if not self.window.gameIsStart():
             self.startGame()
@@ -67,6 +70,9 @@ class Operator:
         self.mouse.leftClick()
         time.sleep(delay)
         return True
+
+    def resetDpi(self):
+        setDpi.setDefaultDpi(self.defaultDpi)
 
     def startGame(self):
         #self.tryToClickButton("arkNightsApp",delay=self.conf["time"]["gameStartTime"])
@@ -123,7 +129,7 @@ class Operator:
         if self.conf["initWindowConfig"]["flag"] == "True":
             for i in range(round):
                 #if self.takeDrug and self.tryToClickButton("takeFuckingDrug",delay=5,skip=True):
-                #    self.tryToClickButton("startOperation"
+                #    self.tryToClickButton("startOperation")
                 #self.logger.info("process deal before: %d", datetime.datetime.now().microsecond)
                 self.tryToClickButton("correctOption", 
                                       waiting=self.conf["time"]["ocrDelayTime"], 
@@ -145,7 +151,7 @@ class Operator:
         elif self.conf["initWindowConfig"]["flag"] == "False":
             for i in range(round):
                 #if self.takeDrug and self.tryToClickButton("takeFuckingDrug",delay=5,skip=True):
-                #    self.tryToClickButton("startOperation"
+                #    self.tryToClickButton("startOperation")
                 self.tryToClickButton("errorOption", 
                                       waiting=self.conf["time"]["ocrDelayTime"], 
                                       delay=self.conf["time"]["clickDelayTime"], 
@@ -159,10 +165,11 @@ class Operator:
                                       delay=self.conf["time"]["clickDelayTime"], 
                                       retryGap=self.conf["time"]["retryGapTime"])
 
-                #self.tryToClickButton("nextQuestion",waiting=5,delay=5,retryGap=10)
-                
+                #self.tryToClickButton("nextQuestion",waiting=5,delay=5,retryGap=10)        
         else:
             self.logger.info("Can't set conf.toml's flag... || flag = %s", self.conf["flag"])
+        self.resetDpi()
+
 
     #collection items from base
     #基建收菜
