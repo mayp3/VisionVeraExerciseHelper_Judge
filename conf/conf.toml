@@ -18,8 +18,8 @@ dpi="3840_2160"
 #dpi="2560_1440"
 
 #选项"正确""错误"配置
-#flag="True"
-flag="False"
+flag="True"
+#flag="False"
 #图标公共路径
 publicpath="./images/OperationIcon/VisionVeraIcon/"
 
@@ -27,11 +27,11 @@ publicpath="./images/OperationIcon/VisionVeraIcon/"
 #gameStartTime=1
 gameWatingTime=1
 #ocr间隔时间
-ocrDelayTime=0.8
+ocrDelayTime=0.5
 #鼠标点击间隔时间
-clickDelayTime=0.8
+clickDelayTime=0.4
 #延时
-retryGapTime=0.8
+retryGapTime=0.4
 
 
 [log]

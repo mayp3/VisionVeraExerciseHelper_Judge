@@ -114,7 +114,7 @@ class Operator:
     #刷判断题
     def runOperation_panduan(self,round=10):
         if round == -1:
-            round = 3750
+            round = 2000
             #round = 100000
 
         self.logger.info("runOperation_panduan || initWindowConfig.flag = %s", self.conf["initWindowConfig"]["flag"])
