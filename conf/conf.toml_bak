@@ -1,0 +1,56 @@
+[initWindowConfig]
+emulatorName="MuMu模拟器"
+emulatorGameName = "明日方舟 - MuMu模拟器"
+emulatorPath="D:\\application\\mumu\\emulator\\nemu\\EmulatorShell\\NemuLauncher.exe"
+emulatorStartTime=20
+retry=3
+startPos=[-1800,400]
+takeDrag=1
+#antiDetect=True
+
+#Do not change the size of window!!! other wise image recognze will not work!!!
+size=[1400, 800]
+
+[time]
+gameStartTime=10
+gameWatingTime=10
+
+[log]
+level="INFO"
+path="./log/all.log"
+
+[img]
+screenShotsPath = "./images/ScreenShots/"
+
+
+[item]
+url="https://planner.penguin-stats.io/"
+
+[buttons]
+startOperation="./images/OperationIcon/startOperation.png"
+startOperationInOperatorView="./images/OperationIcon/starOperationInOperatorView.png"
+operationEnd="./images/OperationIcon/operationEnd.png"
+uploadingData="./images/OperationIcon/upLoadingData.png"
+arkNightsApp="./images/OperationIcon/arkNightsApp.png"
+homePage_WatingForWeakup="./images/OperationIcon/homePage_WatingForWeakup.png"
+closePost="./images/OperationIcon/closePost.png"
+friendPage="./images/OperationIcon/homePage_friend.png"
+friendList="./images/OperationIcon/friendFriendList.png"
+visitFriend="./images/OperationIcon/visitFriend.png"
+visitFriendNext="./images/OperationIcon/visitFriendNext.png"
+navigate="./images/OperationIcon/navigate.png"
+navigateHome="./images/OperationIcon/navigateHome.png"
+store="./images/OperationIcon/store.png"
+storeCredit="./images/OperationIcon/storeCredit.png"
+storeCreditItem="./images/OperationIcon/storeCreditItem.png"
+storeCreditItemBuy="./images/OperationIcon/storeCreditItemBuy.png"
+task="./images/OperationIcon/task.png"
+taskCollectAll="./images/OperationIcon/taskCollectAll.png"
+base="./images/OperationIcon/base.png"
+baseRing="./images/OperationIcon/baseRing.png"
+baseTodoList="./images/OperationIcon/baseTodoList.png"
+collectStoreCredit="./images/OperationIcon/collectStoreCredit.png"
+terminal="./images/OperationIcon/terminal.png"
+eliminateOperation="./images/OperationIcon/eliminateOperation.png"
+eliminateFinish="./images/OperationIcon/eliminateFinish.png"
+takeFuckingDrug="./images/OperationIcon/takeFuckingDrug.png"
